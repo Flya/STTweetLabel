@@ -82,7 +82,14 @@
     _textView.textContainer.lineFragmentPadding = 0;
     _textView.textContainerInset                = UIEdgeInsetsZero;
     _textView.userInteractionEnabled            = NO;
+    
+    _textView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:_textView];
+    
+    [self addConstraints:@[[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_textView attribute:NSLayoutAttributeBottom multiplier:1 constant:0],
+                           [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_textView attribute:NSLayoutAttributeTop multiplier:1 constant:0],
+                           [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:_textView attribute:NSLayoutAttributeLeft multiplier:1 constant:0],
+                           [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:_textView attribute:NSLayoutAttributeRight multiplier:1 constant:0]]];
 }
 
 - (void)setupURLRegularExpression {
@@ -259,18 +266,18 @@
 }
 
 #pragma mark - Setters
-
+/*
 - (void)setBounds:(CGRect)bounds {
     [super setBounds:bounds];
     [self invalidateIntrinsicContentSize];
 }
-
+*/
 - (void)setText:(NSString *)text {
     [super setText:@""];
     _cleanText = text;
     _selectableRange = NSMakeRange(NSNotFound, 0);
     [self determineHotWords];
-    [self invalidateIntrinsicContentSize];
+ //   [self invalidateIntrinsicContentSize];
 }
 
 - (void)setValidProtocols:(NSArray *)validProtocols {
