@@ -277,7 +277,7 @@
     _cleanText = text;
     _selectableRange = NSMakeRange(NSNotFound, 0);
     [self determineHotWords];
- //   [self invalidateIntrinsicContentSize];
+    [self invalidateIntrinsicContentSize];
 }
 
 - (void)setValidProtocols:(NSArray *)validProtocols {
