@@ -266,12 +266,12 @@
 }
 
 #pragma mark - Setters
-/*
+
 - (void)setBounds:(CGRect)bounds {
     [super setBounds:bounds];
     [self invalidateIntrinsicContentSize];
 }
-*/
+
 - (void)setText:(NSString *)text {
     [super setText:@""];
     _cleanText = text;
