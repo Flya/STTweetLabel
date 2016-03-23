@@ -248,7 +248,7 @@
 #pragma mark - Public methods
 
 - (CGSize)suggestedFrameSizeToFitEntireStringConstrainedToWidth:(CGFloat)width {
-    if (_cleanText == nil)
+    if (_cleanText == nil || _cleanText.length == 0)
         return CGSizeZero;
 
     return [_textView sizeThatFits:CGSizeMake(width, CGFLOAT_MAX)];
